@@ -1,7 +1,7 @@
-// outputNode.js
+// outputNode.js - Refactored to use BaseNode
 
 import { useState } from 'react';
-import { Handle, Position } from 'reactflow';
+import { BaseNode } from './BaseNode';
 
 export const OutputNode = ({ id, data }) => {
   const [currName, setCurrName] = useState(data?.outputName || id.replace('customOutput-', 'output_'));
@@ -15,33 +15,36 @@ export const OutputNode = ({ id, data }) => {
     setOutputType(e.target.value);
   };
 
-  return (
-    <div style={{width: 200, height: 80, border: '1px solid black'}}>
-      <Handle
-        type="target"
-        position={Position.Left}
-        id={`${id}-value`}
+  const fields = [
+    <label key="name">
+      Name:
+      <input 
+        type="text" 
+        value={currName} 
+        onChange={handleNameChange} 
       />
-      <div>
-        <span>Output</span>
-      </div>
-      <div>
-        <label>
-          Name:
-          <input 
-            type="text" 
-            value={currName} 
-            onChange={handleNameChange} 
-          />
-        </label>
-        <label>
-          Type:
-          <select value={outputType} onChange={handleTypeChange}>
-            <option value="Text">Text</option>
-            <option value="File">Image</option>
-          </select>
-        </label>
-      </div>
-    </div>
+    </label>,
+    <label key="type">
+      Type:
+      <select value={outputType} onChange={handleTypeChange}>
+        <option value="Text">Text</option>
+        <option value="Image">Image</option>
+      </select>
+    </label>
+  ];
+
+  const inputs = [
+    { id: 'value', label: 'Input', color: '#ef4444' }
+  ];
+
+  return (
+    <BaseNode
+      id={id}
+      data={data}
+      nodeType="customOutput"
+      title="Output"
+      fields={fields}
+      inputs={inputs}
+    />
   );
 }

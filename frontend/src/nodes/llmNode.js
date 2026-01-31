@@ -1,34 +1,29 @@
-// llmNode.js
+// llmNode.js - Refactored to use BaseNode
 
-import { Handle, Position } from 'reactflow';
+import { BaseNode } from './BaseNode';
 
 export const LLMNode = ({ id, data }) => {
+  const inputs = [
+    { id: 'system', label: 'System', color: '#8b5cf6' },
+    { id: 'prompt', label: 'Prompt', color: '#8b5cf6' }
+  ];
+
+  const outputs = [
+    { id: 'response', label: 'Response', color: '#8b5cf6' }
+  ];
 
   return (
-    <div style={{width: 200, height: 80, border: '1px solid black'}}>
-      <Handle
-        type="target"
-        position={Position.Left}
-        id={`${id}-system`}
-        style={{top: `${100/3}%`}}
-      />
-      <Handle
-        type="target"
-        position={Position.Left}
-        id={`${id}-prompt`}
-        style={{top: `${200/3}%`}}
-      />
-      <div>
-        <span>LLM</span>
+    <BaseNode
+      id={id}
+      data={data}
+      nodeType="llm"
+      title="LLM"
+      inputs={inputs}
+      outputs={outputs}
+    >
+      <div style={{ fontSize: '12px', color: '#666', textAlign: 'center' }}>
+        This is a LLM.
       </div>
-      <div>
-        <span>This is a LLM.</span>
-      </div>
-      <Handle
-        type="source"
-        position={Position.Right}
-        id={`${id}-response`}
-      />
-    </div>
+    </BaseNode>
   );
 }
