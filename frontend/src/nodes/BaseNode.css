@@ -1,0 +1,153 @@
+/* BaseNode.css - Shared styling for all nodes */
+
+.base-node {
+  min-width: 200px;
+  min-height: 80px;
+  border-radius: 8px;
+  background: white;
+  border: 2px solid #1a192b;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.base-node:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.node-header {
+  background: #1a192b;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px 6px 0 0;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+}
+
+.node-content {
+  padding: 12px;
+}
+
+.node-field {
+  margin-bottom: 8px;
+}
+
+.node-field:last-child {
+  margin-bottom: 0;
+}
+
+.node-field label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 4px;
+  color: #333;
+}
+
+.node-field input,
+.node-field select,
+.node-field textarea {
+  width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.node-field input:focus,
+.node-field select:focus,
+.node-field textarea:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+/* Different node type colors */
+.customInput-node .node-header {
+  background: #22c55e;
+}
+
+.customInput-node {
+  border-color: #22c55e;
+}
+
+.customOutput-node .node-header {
+  background: #ef4444;
+}
+
+.customOutput-node {
+  border-color: #ef4444;
+}
+
+.llm-node .node-header {
+  background: #8b5cf6;
+}
+
+.llm-node {
+  border-color: #8b5cf6;
+}
+
+.text-node .node-header {
+  background: #3b82f6;
+}
+
+.text-node {
+  border-color: #3b82f6;
+}
+
+/* New node types */
+.filter-node .node-header {
+  background: #f59e0b;
+}
+
+.filter-node {
+  border-color: #f59e0b;
+}
+
+.transform-node .node-header {
+  background: #06b6d4;
+}
+
+.transform-node {
+  border-color: #06b6d4;
+}
+
+.conditional-node .node-header {
+  background: #ec4899;
+}
+
+.conditional-node {
+  border-color: #ec4899;
+}
+
+.api-node .node-header {
+  background: #14b8a6;
+}
+
+.api-node {
+  border-color: #14b8a6;
+}
+
+.database-node .node-header {
+  background: #6366f1;
+}
+
+.database-node {
+  border-color: #6366f1;
+}
+
+/* Handle styles */
+.react-flow__handle {
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  transition: all 0.2s ease;
+}
+
+.react-flow__handle:hover {
+  width: 14px;
+  height: 14px;
+}
