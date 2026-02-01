@@ -1,12 +1,13 @@
-// toolbar.js
+// toolbar.js - Part 2: Styled toolbar
 
 import { DraggableNode } from './draggableNode';
+import './toolbar.css';
 
 export const PipelineToolbar = () => {
-
     return (
-        <div style={{ padding: '10px' }}>
-            <div style={{ marginTop: '20px', display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+        <div className="toolbar">
+            <h2 className="toolbar-title">🛠️ Pipeline Nodes</h2>
+            <div className="toolbar-nodes">
                 <DraggableNode type='customInput' label='Input' />
                 <DraggableNode type='llm' label='LLM' />
                 <DraggableNode type='customOutput' label='Output' />

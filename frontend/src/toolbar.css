@@ -1,0 +1,23 @@
+/* toolbar.css - Styled toolbar */
+
+.toolbar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar-title {
+  color: white;
+  margin: 0 0 15px 0;
+  font-size: 24px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toolbar-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
